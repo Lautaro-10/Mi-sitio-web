@@ -85,7 +85,7 @@ section.destinos {
     padding: 20px;
 }
 
-section.destinos .columna {
+section.destinos .destino {
     flex: 1;
     margin: 10px;
 }
@@ -123,4 +123,24 @@ form input {
     border-radius: 10px;
     object-fit: cover;
 }
+
+.destino img {
+    width: 300px;
+    height: 200px;
+    object-fit: cover; 
+    border-radius: 10px;
+    transition: transform 0.3s ease;
+}
+
+.destino img:hover {
+    transform: scale(1.05);
+}
+
+.destino h2 {
+    font-size: 18px;
+    color: #333;
+    margin-top: 10px;
+}
+
+
 
