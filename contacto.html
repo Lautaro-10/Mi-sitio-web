@@ -20,39 +20,27 @@
 
 
 
-    <form id="formulario" novalidate>
-        <h1 id="titulo">Formulario de Contacto</h1>
-        <label for="nombre">Nombre Completo:</label>
-        <input type="text" id="nombre" required>
+    <form id="form" novalidate>
+        <label for="nombre">Nombre:</label>
+        <input type="text" id="nombre" maxlength="50" >
         <br>
-        <div class="error-mensaje " id="error-nombre"></div>
-
+    
+        <label for="email">Correo Electrónico:</label>
+        <input type="email" id="email" >
+        <br>
+    
+        <label for="telefono">Teléfono:</label>
+        <input type="tel" id="telefono" pattern="[0-9]{10}" >
+        <br>
+    
         <label for="edad">Edad:</label>
-        <input type="number" id="edad" min="18" required>
-        <br>
-        <div class="error-mensaje " id="error-edad"></div>
-
-        <label for="email">Email:</label>
-        <input type="email" id="email" required>
-        <br>
-        <div class="error-mensaje " id="error-email"></div>
-
-        <label for="telefono">Telefono:</label>
-        <input type="tel" id="telefono" required>
-        <div class="error-mensaje " id="error-telefono"></div>
-
-        <button type="submit" > Enviar </button>
-
-
-
-
+        <input type="number" id="edad" min="18" >
+    
+        <input type="button" value="Enviar" onclick='envioformulario()'>
     </form>
-    <div id="feedback">
-        <h3>Datos Ingresados:</h3>
-        <p><strong>Nombre:</strong> <span id="feedback-nombre"></span></p>
-        <p><strong>Edad:</strong> <span id="feedback-edad"></span></p>
-        <p><strong>Correo Electrónico:</strong> <span id="feedback-email"></span></p>
-    </div>
+    
+    <div id="mensaje"></div>
+    
 
     <footer class="pie">
         <p>© 2024 Argentina Airlines. Todos los derechos reservados.</p>

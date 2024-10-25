@@ -16,58 +16,28 @@ document.getElementById('anterior').addEventListener('click', () => {
     document.getElementById('imagencarrousel').src = imagenes[indice];
 });
 
-document.getElementById('formulario').addEventListener('submit', function(event) {
-    event.preventDefault(); 
+var nombre = document.getElementById('nombre');
+var email = document.getElementById('email');
+var telefono = document.getElementById('telefono');
+var edad = document.getElementById('edad');
+var error = document.getElementById('mensaje');
+error.style.color='red';
 
-    const nombre = document.getElementById('nombre').value;
-    const email = document.getElementById('email').value;
-    const telefono = document.getElementById('telefono').value;
-    const edad = parseInt(document.getElementById('edad').value);
+    function envioformulario(){
+        
+        var mensajeserror=[];
+        
+        if(nombre.value === null || nombre.value ===''){
+            mensajeserror.push("Ingrese su nombre");
+        }
+        if(edad.value === null || edad.value<18){
+            mensajeserror.push("Debe tener mas de 18 para consultar las ofertas");
 
-    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    const telefonoRegex = /^[0-9]{10}$/;
+        }
 
-    let errores = [];
+        error.innerHTML = mensajeserror.join(',  ');
 
-    if (!nombre.trim()) {
-        errores.push("El nombre es obligatorio.");
+
+
+
     }
-
-    if (!emailRegex.test(email)) {
-        errores.push("El correo electrónico no es válido.");
-    }
-
-    if (!telefonoRegex.test(telefono)) {
-        errores.push("El teléfono debe tener 10 dígitos.");
-    }
-
-    if (isNaN(edad) || edad < 18) {
-        errores.push("La edad debe ser mayor o igual a 18 años.");
-    }
-
-    if (errores.length > 0) {
-        mostrarErrores(errores);
-    } else {
-        mostrarDatos(nombre, email, telefono, edad);
-    }
-});
-
-function mostrarErrores(errores) {
-    const mensajeDiv = document.getElementById('mensaje');
-    mensajeDiv.innerHTML = ''; 
-    errores.forEach(error => {
-        const errorParrafo = document.createElement('p');
-        errorParrafo.textContent = error;
-        errorParrafo.style.color = 'red';
-        mensajeDiv.appendChild(errorParrafo);
-    });
-}
-
-function mostrarDatos(nombre, email, telefono, edad) {
-    const mensajeDiv = document.getElementById('mensaje');
-    mensajeDiv.innerHTML = ''; 
-
-    const datosParrafo = document.createElement('p');
-    datosParrafo.textContent = `Nombre: ${nombre}, Correo: ${email}, Teléfono: ${telefono}, Edad: ${edad}`;
-    mensajeDiv.appendChild(datosParrafo);
-}
