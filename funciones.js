@@ -18,6 +18,7 @@ document.getElementById('anterior').addEventListener('click', () => {
 
 document.getElementById('formulario').addEventListener('submit', function(event) {
     event.preventDefault(); 
+
     const nombre = document.getElementById('nombre').value;
     const email = document.getElementById('email').value;
     const telefono = document.getElementById('telefono').value;

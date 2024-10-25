@@ -7,7 +7,7 @@ body {
 }
 
 header {
-    background-color: #007bff;
+    background-color: #181a1b;
     padding: 10px;
     text-align: center;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
@@ -25,7 +25,7 @@ header {
 form {
     background-color: #fff;
     padding: 30px;
-    border-radius: 8px;
+    border-radius: 10px;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
     max-width: 500px;
     margin: auto;
@@ -46,17 +46,7 @@ input.error{
     color: red;
     font-size: medium;
 }
-#envio{
-    background-color: #28a745;
-    color: white;
-    display: block;
-    width: 100%;
-    padding: 10px;
-    font-size: 1rem;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-}
+
 #titulo{
     font-size: xx-large;
     text-align: center;
@@ -136,7 +126,7 @@ button {
 
 h1 {
     text-align: center;
-    color: #41cc78;
+    color: #000000;
 }
 
 section.destinos {
@@ -196,6 +186,10 @@ form input {
 .destino p {
     font-size: 1rem;
     color: #666;
+}
+.pie{
+    background-color: #333;
+    color: #fdfdfd;
 }
 
 
