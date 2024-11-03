@@ -1,4 +1,4 @@
-document.addEventListener('DOMContentLoaded', () => {
+
     const imagenes = [
         'imagenes/playa.webp',
         'imagenes/nieve.jpg',
@@ -67,5 +67,3 @@ document.addEventListener('DOMContentLoaded', () => {
             mensajeDiv.appendChild(exitoParrafo);
         }
     });
-});
-
