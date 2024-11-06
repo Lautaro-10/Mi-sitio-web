@@ -1,69 +1,71 @@
+console.log("Hola");
+console.log("lpm");
+const formulario = document.getElementById("formulario")
 
-    const imagenes = [
-        'imagenes/playa.webp',
-        'imagenes/nieve.jpg',
-        'imagenes/selva.jpg', 
-        'imagenes/desierto.jpg'
-    ];
-    let indice = 0;
-    
-    document.getElementById('siguiente').addEventListener('click', () => {
-        indice = (indice + 1) % imagenes.length; 
-        document.getElementById('imagencarrousel').src = imagenes[indice];
-    });
-    
-    document.getElementById('anterior').addEventListener('click', () => {
-        indice = (indice - 1 + imagenes.length) % imagenes.length;
-        document.getElementById('imagencarrousel').src = imagenes[indice];
-    });
-    
-    const formulario = document.getElementById('formulario');
+const nombre = document.getElementById("nombre").value;
+const email = document.getElementById("email").value;
+const telefono = document.getElementById("telefono").value;
+const edad = parseInt(document.getElementById("edad").value);
+const provincia = document.getElementById("provincias").value;
 
-    formulario.addEventListener('submit', function(event) {
-        event.preventDefault();  
+    formulario.addEventListener("submit", function(event) {
+        event.preventDefault();
 
-        const nombre = document.getElementById('nombre').value;
-        const email = document.getElementById('email').value;
-        const telefono = document.getElementById('telefono').value;
-        const edad = parseInt(document.getElementById('edad').value);
-        const provincia = document.getElementById('provincias').value;
+        const nombre = document.getElementById("nombre").value;
+        const email = document.getElementById("email").value;
+        const telefono = document.getElementById("telefono").value;
+        const edad = parseInt(document.getElementById("edad").value);
+        const provincia = document.getElementById("provincias").value;
 
-        let errores = [];
+
+        const errorNombre = document.getElementById("error-nombre");
+        const errorEmail = document.getElementById("error-email");
+        const errorTelefono = document.getElementById("error-telefono");
+        const errorEdad = document.getElementById("error-edad");
+        const errorProvincia = document.getElementById("error-provincia");
+        const feedback = document.getElementById("feedback");
+
+        errorNombre.textContent = "";
+        errorEmail.textContent = "";
+        errorTelefono.textContent = "";
+        errorEdad.textContent = "";
+        errorProvincia.textContent = "";
+        feedback.textContent = "";
+
+        let formularioValido = true;
 
         if (!nombre) {
-            errores.push('El nombre es obligatorio.');
+            errorNombre.textContent = "El nombre es obligatorio.";
+            formularioValido = false;
         }
 
         if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
-            errores.push('El correo electrónico no es válido.');
+            errorEmail.textContent = "El correo electrónico no es válido.";
+            formularioValido = false;
         }
 
-        if (!/^[0-9]{10}$/.test(telefono)) {
-            errores.push('El teléfono debe tener 10 dígitos.');
-        }
+      /*  if (!/^[0-9]{10}$/.test(telefono)) {
+            errorTelefono.textContent = "El teléfono debe tener 10 dígitos.";
+            formularioValido = false;
+        } */
 
         if (isNaN(edad) || edad < 18) {
-            errores.push('La edad debe ser mayor o igual a 18 años.');
+            errorEdad.textContent = "La edad debe ser mayor o igual a 18 años.";
+            formularioValido = false;
         }
 
         if (!provincia) {
-            errores.push('Seleccione una provincia.');
+            errorProvincia.textContent = "Seleccione una provincia.";
+            formularioValido = false;
         }
 
-        const mensajeDiv = document.getElementById('mensaje');
-        mensajeDiv.innerHTML = '';
-
-        if (errores.length > 0) {
-            errores.forEach(error => {
-                const errorParrafo = document.createElement('p');
-                errorParrafo.textContent = error;
-                errorParrafo.style.color = 'red';
-                mensajeDiv.appendChild(errorParrafo);
-            });
-        } else {
-            const exitoParrafo = document.createElement('p');
-            exitoParrafo.textContent = `Formulario enviado correctamente. Nombre: ${nombre}, Email: ${email}, Teléfono: ${telefono}, Edad: ${edad}, Provincia: ${provincia}`;
-            exitoParrafo.style.color = 'green';
-            mensajeDiv.appendChild(exitoParrafo);
+        if (formularioValido) {
+            alert("Formulario enviado correctamente.");
+            feedback.textContent = "¡Formulario enviado correctamente! Gracias por contactarnos.";
+            feedback.style.color = "green";
         }
     });
+   
+
+    
+
