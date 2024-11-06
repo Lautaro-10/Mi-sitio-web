@@ -73,9 +73,6 @@ input, select {
     font-size: 1rem;
 }
 
-input.error, select.error {
-    border: 2px solid red;
-}
 
 input:focus, select:focus {
     border-color: gold;
@@ -85,6 +82,7 @@ input:focus, select:focus {
 
 input[type="button"]:hover {
     background-color: #0056b3;
+
 }
 
 #mensaje {
@@ -227,4 +225,8 @@ section.destinos {
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
 
-
+.error {
+    color: red;
+    font-size: 0.9rem;
+    margin-bottom: 10px;
+}

@@ -1,12 +1,4 @@
-console.log("Hola");
-console.log("lpm");
 const formulario = document.getElementById("formulario")
-
-const nombre = document.getElementById("nombre").value;
-const email = document.getElementById("email").value;
-const telefono = document.getElementById("telefono").value;
-const edad = parseInt(document.getElementById("edad").value);
-const provincia = document.getElementById("provincias").value;
 
     formulario.addEventListener("submit", function(event) {
         event.preventDefault();
@@ -63,9 +55,10 @@ const provincia = document.getElementById("provincias").value;
             alert("Formulario enviado correctamente.");
             feedback.textContent = "¡Formulario enviado correctamente! Gracias por contactarnos.";
             feedback.style.color = "green";
+            document.getElementById('nombre').value= "";
+            document.getElementById('email').value= "";
+            document.getElementById('telefono').value= "";
+            document.getElementById('edad').value= "";
+            document.getElementById('provincias').value= "";
         }
     });
-   
-
-    
-
