@@ -159,6 +159,23 @@ section.carousel img {
     transform: translateY(-50%);
     margin-top: 60px;
 }
+#feedback {
+    margin-top: 30px;
+    padding: 15px;
+    background-color: #a7caac;
+    border-radius: 8px;
+}
+#feedback h3 {
+    margin-top: 0;
+    color: #000000;
+}
+#feedback p {
+    font-size: 16px;
+    line-height: 1.5;
+}
+#feedback p strong {
+    color: #905129;
+}
 
 
 #anterior {
@@ -252,20 +269,4 @@ section.destinos {
     font-size: 0.9rem;
     margin-bottom: 10px;
 }
-#feedback {
-    margin-top: 30px;
-    padding: 15px;
-    background-color: #a7caac;
-    border-radius: 8px;
-}
-#feedback h3 {
-    margin-top: 0;
-    color: #000000;
-}
-#feedback p {
-    font-size: 16px;
-    line-height: 1.5;
-}
-#feedback p strong {
-    color: #905129;
-}
+
